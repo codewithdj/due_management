@@ -39,5 +39,51 @@ session_start();
 
     <a href="add-user.php" target="_blank" >Add User</a>
 
+       <div class="col-sm-9 col-sm-offset-2 col-md-10 col-md-offset-1 main">
+          <h1 class="page-header">Tution Fee</h1>
+
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                  <th>S. No.</th>
+                  <th>Book Name</th>
+                  <th>Issue Date</th>
+                  <th>Return Date</th>
+                  <th>Semester</th>
+                  <th>Due</th>
+                </tr>
+                </thead>
+              <tbody>
+
+              <?php
+                  $conn = mysqli_connect("localhost","root","","fees");
+                  $date = date('Y-m-d');
+                                    
+                  $twoDayBefore =date('Y-m-d', strtotime('+3 day', strtotime($date)));
+               
+                  $query= "select * from lib_fees where return_date between $date AND  $twoDayBefore" ;
+             			            $result = mysqli_query($conn,$query);
+	
+
+                         while($row = mysqli_fetch_assoc($result)){
+                              echo "<tr>";
+                              echo "<td>".$row['sNo']."</td>";                           
+                              echo "<td>".$row['book_name']."</td>";                           
+                              echo "<td>".$row['issue_date']."</td>";                           
+                              echo "<td>".$row['return_date']."</td>";                           
+                              echo "<td>".$row['semester']."</td>";                           
+                              echo "<td>".$row['due']."</td>";             
+                        echo "</tr>";	
+	}
+echo "</tbody>";
+	echo "</table>";
+	
+	?>
+
+          </div>
+        </div>
+     
+
 
 </body>
