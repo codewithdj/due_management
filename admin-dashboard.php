@@ -75,8 +75,8 @@ session_start();
                               echo "<td>".$row['return_date']."</td>";                           
                               echo "<td>".$row['semester']."</td>";                           
                               echo "<td>".$row['due']."</td>";    
-                             echo "<td><a href='send-notices.php?id=echo $row['enrollNo'];' target='_blank'>View </a></td>"
-	    
+                              echo "<td><a href='send-notice.php?id=".$row['enrollNo']."' target='_blank' >Send Notice</a></td>";     
+                             
                         echo "</tr>";	
 	}
 echo "</tbody>";
