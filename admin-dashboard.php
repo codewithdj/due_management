@@ -62,7 +62,8 @@ session_start();
                                     
                   $twoDayBefore =date('Y-m-d', strtotime('+3 day', strtotime($date)));
                
-                  $query= "select * from lib_fees where return_date between $date AND  $twoDayBefore" ;
+                  $query= "select * from lib_fees where return_date >=$twoDayBefore" ;
+                 // echo $twoDayBefore;
              			            $result = mysqli_query($conn,$query);
 	
 
@@ -73,7 +74,9 @@ session_start();
                               echo "<td>".$row['issue_date']."</td>";                           
                               echo "<td>".$row['return_date']."</td>";                           
                               echo "<td>".$row['semester']."</td>";                           
-                              echo "<td>".$row['due']."</td>";             
+                              echo "<td>".$row['due']."</td>";    
+                             echo "<td><a href='send-notices.php?id=echo $row['enrollNo'];' target='_blank'>View </a></td>"
+	    
                         echo "</tr>";	
 	}
 echo "</tbody>";

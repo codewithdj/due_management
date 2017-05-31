@@ -33,7 +33,15 @@ session_start();
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="#">Project name</a>
+         
+
         </div>
+         <ul class="nav navbar-nav pull-right" >
+           <li  ><a href="lib-fee.php"><b>Library Dues</b></a></li>
+				   <li  ><a  href="notice.php"><b>Notices</b></a></li>
+				   <li  ><a href="logout.php"><b>Log Out</b></a></li>        
+          </ul>
+		
       </div>
     </nav>
 
