@@ -42,11 +42,6 @@
         <input type="text" id="enrollment" name="enrollment" class="form-control" placeholder="Enrollment Number" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Password" required>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div>
 
         
     <?php
@@ -56,9 +51,9 @@
 
           $password = $_POST['inputPassword'];
           $enrollment=$_POST['enrollment'];
-          
+
           $conn = mysqli_connect("localhost","root","","fees");
-          $query = "SELECT * FROM ulogin WHERE password='$password' AND enrollNo = '$enrollment'";
+          $query = "SELECT * FROM student_details WHERE password='$password' AND enrollNo = '$enrollment'";
           $result = mysqli_query($conn, $query);
             
 

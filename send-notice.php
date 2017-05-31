@@ -1,13 +1,16 @@
 <?php
 session_start();
-	 
+	 	if(!(isset($_SESSION['mainadminlogin']))){
+		header("location:adminlogin.php");
+	} 
+
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Send Alert</title>
+	<title>Send Notice</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 
@@ -23,9 +26,7 @@ session_start();
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
-         
-
+                 <a class="navbar-brand" href="#">Dues Enquiry</a>
         </div>
          <ul class="nav navbar-nav pull-right" >
             <li  ><a href="lib-admin.php"><b>Library Dues</b></a></li>

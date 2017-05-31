@@ -1,5 +1,9 @@
 <?php
 session_start();
+	if(!(isset($_SESSION['mainadminlogin']))){
+		header("location:adminlogin.php");
+	} 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +36,7 @@ session_start();
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="#">Dues Enquiry</a>
          
 
         </div>

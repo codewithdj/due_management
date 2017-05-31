@@ -1,5 +1,9 @@
 <?php
-session_start();
+session_start();	
+  if(!(isset($_SESSION['mainadminlogin']))){
+		header("location:adminlogin.php");
+	} 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,12 +36,21 @@ session_start();
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="#">Dues Enquiry</a>
+         
+
         </div>
+         <ul class="nav navbar-nav pull-right" >
+           <li  ><a href="lib-admin.php"><b>Library Dues</b></a></li>
+				   <li  ><a  href="fee-admin.php"><b>Fee Dues</b></a></li>
+           <li  ><a  href="add-student.php"><b>Add Student</b></a></li>
+				   <li  ><a href="logout.php"><b>Log Out</b></a></li>        
+          </ul>
+		
       </div>
     </nav>
 
-    <div class="col-sm-12 col-md-12" >
+    <div class="container col-sm-6 col-md-6 col-md-offset-3" >
 			 <div class="panel panel-default" style="border:3px solid white;padding:2px" >
 				 <div class="panel-heading">
 					 <h3 class="panel-title text-center" style="color:darkorange;font-size:18px"><b> Add New Student</b></h3>
