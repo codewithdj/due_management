@@ -56,7 +56,7 @@
 
           $password = $_POST['inputPassword'];
           $enrollment=$_POST['enrollment'];
-
+          
           $conn = mysqli_connect("localhost","root","","fees");
           $query = "SELECT * FROM ulogin WHERE password='$password' AND enrollNo = '$enrollment'";
           $result = mysqli_query($conn, $query);

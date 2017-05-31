@@ -71,7 +71,9 @@ session_start();
                               echo "<td>".$row['tutionFee']."</td>";                           
                               echo "<td>".$row['feeDue']."</td>";                           
                               echo "<td>".$row['feePaid']."</td>";                           
-                              echo "<td>".$row['date']."</td>";                           
+                              echo "<td>".$row['date']."</td>";  
+                              echo "<td><a href='del-fee.php?id=".$row['enrollNo']."'> Delete</a></td>";
+                                     
 	echo "</tr>";	
 	}
 echo "</tbody>";
