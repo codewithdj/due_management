@@ -38,16 +38,15 @@ session_start();
         </div>
          <ul class="nav navbar-nav pull-right" >
            <li  ><a href="lib-admin.php"><b>Library Dues</b></a></li>
-				   <li  ><a  href="fee-admin.php"><b>Fee Dues<b></a></li>
-           <li  ><a  href="add-student.php"><b>Add Student<b></a></li>
+				   <li  ><a  href="fee-admin.php"><b>Fee Dues</b></a></li>
+           <li  ><a  href="add-student.php"><b>Add Student</b></a></li>
 				   <li  ><a href="logout.php"><b>Log Out</b></a></li>        
           </ul>
 		
       </div>
     </nav>
 
-    <a href="add-user.php" target="_blank" >Add User</a>
-
+  
        <div class="col-sm-9 col-sm-offset-2 col-md-10 col-md-offset-1 main">
           <h1 class="page-header">Tution Fee</h1>
 
@@ -69,11 +68,9 @@ session_start();
                   $conn = mysqli_connect("localhost","root","","fees");
                   $date = date('Y-m-d');
                                     
-                  $twoDayBefore =date('Y-m-d', strtotime('+3 day', strtotime($date)));
-               
-                  $query= "select * from lib_fees where return_date >=$twoDayBefore" ;
-                 // echo $twoDayBefore;
-             			            $result = mysqli_query($conn,$query);
+                  $twoDayBefore =date('Y-m-d', strtotime('-3 day', strtotime($date)));
+                  $query= "select * from lib_fees where return_date between '$twoDayBefore' and '$date'" ;
+                  $result = mysqli_query($conn,$query);
 	
 
                          while($row = mysqli_fetch_assoc($result)){

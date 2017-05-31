@@ -68,15 +68,14 @@ session_start();
 						 </div>
 						 <div class="form-group">
 							 <label for="image">Upload Image</label>
-							 <input type="file" id="image" class="form-control" placeholder="Upload File" name="image" required ></input>
+							 <input type="file" id="image" class="form-control" placeholder="Upload File" name="image" ></input>
 						 </div>
 						
 <?php
-	  if($_POST){
-         if(isset($_POST['insert'])){
+	       if(isset($_POST['insert'])){
            insert();
             }
-        }
+   
 			function insert(){
 
                     $sname = $_POST['sname'];
@@ -84,19 +83,20 @@ session_start();
                     $sem = $_POST['sem'];
                     $branch = $_POST['branch'];
                     $pwd = $_POST['password'];
-                    $imgPath = ;
+                    $imgPath = "";
 
 
                  $conn = mysqli_connect("localhost","root","","fees");
-          $query = "SELECT * FROM ulogin WHERE password='$password' AND enrollNo = '$enrollment'";
-         
+          $query = "insert into student_details(name,enrollNo,password,semester,branch,img_link) values('$sname','$enrollment','$pwd','$sem','$branch','$imgPath')";
+                   $result = mysqli_query($conn,$query);
+        
             }
 
 
 
 ?>
 
-	 <button type="submit" name="insert"  class="btn btn-primary col-sm-offset-5 col-md-offset-5"> Register</button>
+	 <button type="submit" name="insert" id="insert"  class="btn btn-primary col-sm-offset-5 col-md-offset-5"> Register</button>
 					 </form>
 			     </div>
 			</div>		 
