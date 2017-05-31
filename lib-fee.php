@@ -23,7 +23,6 @@ session_start();
   </head>
 
   <body>
-
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -34,9 +33,18 @@ session_start();
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="#">Project name</a>
+         
+
         </div>
-     </div>
+         <ul class="nav navbar-nav pull-right" >
+           <li  ><a href="tution-fee.php"><b>Tution Fee Dues</b></a></li>
+				   <li  ><a  href="notice.php"><b>Notices</b></a></li>
+				   <li  ><a href="logout.php"><b>Log Out</b></a></li>        
+          </ul>
+		
+      </div>
     </nav>
+
 
         <div class="col-sm-9 col-sm-offset-2 col-md-10 col-md-offset-1 main">
           <h1 class="page-header">Library Due Details</h1>

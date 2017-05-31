@@ -23,7 +23,7 @@ session_start();
 
   <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+       <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -33,7 +33,16 @@ session_start();
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="#">Project name</a>
+         
+
         </div>
+         <ul class="nav navbar-nav pull-right" >
+           <li  ><a href="lib-admin.php"><b>Library Dues</b></a></li>
+				   <li  ><a  href="fee-admin.php"><b>Fee Dues<b></a></li>
+           <li  ><a  href="add-student.php"><b>Add Student<b></a></li>
+				   <li  ><a href="logout.php"><b>Log Out</b></a></li>        
+          </ul>
+		
       </div>
     </nav>
 

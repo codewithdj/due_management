@@ -29,7 +29,7 @@ session_start();
 
   <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -39,8 +39,14 @@ session_start();
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="#">Project name</a>
+         
+
         </div>
-     </div>
+         <ul class="nav navbar-nav pull-right" >
+           <li  ><a href="logout.php"><b>Log Out</b></a></li>        
+          </ul>
+		
+      </div>
     </nav>
 
         <div class="col-sm-9 col-sm-offset-2 col-md-10 col-md-offset-1 main">
@@ -66,7 +72,7 @@ session_start();
                   $enrollment = $_SESSION["enrollment"];
         
                   $conn = mysqli_connect("localhost","root","","fees");
-                  $query= "select * from lib_fees where enrollNo= '$enrollment'";
+                  $query= "select * from lib_fees";
              			            $result = mysqli_query($conn,$query);
 	
                           while($row = mysqli_fetch_assoc($result)){
@@ -77,7 +83,10 @@ session_start();
                               echo "<td>".$row['issue_date']."</td>";                           
                               echo "<td>".$row['return_date']."</td>";                           
                               echo "<td>".$row['semester']."</td>";                           
-                              echo "<td>".$row['due']."</td>";             
+                              echo "<td>".$row['due']."</td>";      
+               echo "<td><a href='del-lib.php?id=".$row['enrollNo']."'> Delete</a></td>";
+                    
+       
                                         
 	echo "</tr>";	
 	}
